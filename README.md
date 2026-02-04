@@ -1,46 +1,39 @@
-# Astro Starter Kit: Basics
+# 📦 Frigilux SGE - Legal Documentation Portal
 
-```sh
-npm create astro@latest -- --template basics
-```
+This project centralizes the **Terms and Conditions**, **Privacy Policy**, and **Frequently Asked Questions (FAQ)** for the **Frigilux App SGE**. Built with Astro to ensure lightning-fast performance and a clean corporate design.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🔗 Live Project
+🚀 **Live Site:** [INSERT YOUR VERCEL LINK HERE] (e.g., https://frigilux-sge-docs.vercel.app)
 
-## 🚀 Project Structure
+---
 
-Inside of your Astro project, you'll see the following folders and files:
+## 📸 Screenshots
+| Terms & Conditions | Privacy Policy |
+| :--- | :--- |
+| ![Terms Preview](https://via.placeholder.com/400x250?text=Terms+Screenshot) | ![Privacy Preview](https://via.placeholder.com/400x250?text=Privacy+Screenshot) |
+
+---
+
+## 🛠️ Tech Stack
+* **Framework:** [Astro 5.0+](https://astro.build/)
+* **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+* **Deployment:** [Vercel](https://vercel.com/)
+* **Icons:** Lucide Icons / Tabler Icons
+
+---
+
+## 📂 Project Structure
 
 ```text
 /
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+├── public/             # Static assets (favicon, branding)
+├── src/
+│   ├── constants.ts    # Global configuration (Support & Admin emails)
+│   ├── layouts/        # Base structure (Corporate Header/Footer)
+│   ├── pages/
+│   │   ├── index.astro       # Main landing page
+│   │   ├── privacy.astro     # Privacy Policy with Venezuelan legal framework
+│   │   ├── terms.astro       # T&C for internal collaborators
+│   │   └── faq.astro         # Interactive FAQ accordions
+│   └── components/     # Reusable UI components
+└── .env                # Environment variables (Git-ignored)
