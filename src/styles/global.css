@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme {
+  /* Mapeo de Colores Corporativos Frigilux */
+  --color-primary: rgb(35, 162, 71);
+  --color-primary-light: rgb(76, 207, 120);
+  --color-primary-pale: rgb(135, 255, 135);
+
+  --color-secondary: rgb(64, 145, 108);
+  --color-secondary-light: rgb(116, 198, 157);
+
+  --color-tertiary: rgb(59, 130, 246);
+  --color-tertiary-light: rgb(147, 197, 253);
+
+  --color-accent: rgb(250, 204, 21);
+  --color-accent-light: rgb(254, 240, 138);
+
+  --color-success: rgb(34, 197, 94);
+  --color-warning: rgb(234, 179, 8);
+  --color-error: rgb(239, 68, 68);
+
+  --color-background: rgb(242, 242, 242);
+  --color-foreground: rgb(15, 23, 42);
+  --color-componentbg: rgb(255, 255, 255);
+  --color-muted: rgb(229, 231, 235);
+  --color-muted-foreground: rgb(107, 114, 128);
+  --color-separator: #e5e7eb;
+}
+
+/* Manejo del Modo Oscuro en v4 (Basado en clase .dark) */
+@variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  .dark {
+    --color-primary: rgb(24, 168, 105);
+    --color-secondary: rgb(80, 170, 130);
+    --color-secondary-light: rgb(187, 247, 208);
+    --color-accent: rgb(250, 204, 21);
+    --color-tertiary: rgb(10, 190, 255);
+
+    --color-background: rgb(24, 24, 26);
+    --color-foreground: rgb(243, 244, 246);
+    --color-componentbg: rgb(40, 40, 44);
+    --color-muted: rgb(31, 41, 55);
+    --color-muted-foreground: rgb(205, 207, 212);
+    --color-separator: rgba(255, 255, 255, 0.1);
+
+    --color-success: rgb(74, 222, 128);
+    --color-warning: rgb(252, 211, 77);
+    --color-error: rgb(248, 113, 113);
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased transition-colors duration-300;
+  }
+  @layer base {
+    html {
+      /* Esto hace que el cambio de color no sea brusco */
+      transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+    }
+
+    body {
+      @apply bg-background text-foreground antialiased;
+    }
+  }
+}

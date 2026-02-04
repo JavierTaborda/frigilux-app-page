@@ -1,0 +1,73 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import { SITE_EMAILS } from "../constants/constants";
+
+const faqs = [
+  {
+    question: "¿Por qué debo usar esta app?",
+    answer: "La aplicación móvil empresarial de Frigilux SGE está diseñada para facilitar la gestión comercial de la marca en Venezuela. Con una interfaz intuitiva y herramientas avanzadas, permite a los equipos de ventas y administración optimizar sus procesos."
+  },
+  {
+    question: "¿Qué hago si no recuerdo mi contraseña?",
+    answer: "Para el reinicio de contraseña puedes contatar a soporte en el correo al final de este apartado."
+  },
+  {
+    question: "¿Qué hago si no recibo el código OTP?",
+    answer: "Verifica que tu conexión a internet sea estable. Si después de dos minutos no has recibido el código en tu correo corporativo, revisa la carpeta de Spam o contacta a soporte."
+  },
+  {
+    question: "¿Por qué la app me pide permiso para usar la cámara?",
+    answer: "El permiso es obligatorio exclusivamente para el módulos de devoluciones o que involucren evidencia. Las fotografías sirven como respaldo legal y técnico del estado de la mercancía que estás procesando."
+  },
+  {
+    question: "¿Puedo usar la app en mi dispositivo personal?",
+    answer: "Sí, siempre que el dispositivo cumpla con los requisitos mínimos de seguridad y el acceso haya sido autorizado previamente por el departamento de IT."
+  },
+  {
+    question: "¿Qué sucede con mis datos si dejo de trabajar en la empresa y quiero eliminar mi cuenta?",
+    answer: "Tu acceso será revocado automáticamente. Tus datos de contacto se anonimizarán, pero los registros de operaciones (ventas/fotos) permanecerán en el sistema por cumplimiento legal."
+  }
+];
+---
+
+<MainLayout title="Preguntas Frecuentes">
+  <div class="max-w-3xl mx-auto px-6 py-12">
+    <h2 class="text-4xl font-black mb-4 text-center text-foreground tracking-tight">
+      Preguntas Frecuentes
+    </h2>
+    <p class="text-sm text-center text-muted-foreground mb-12">
+      Todo lo que necesitas saber sobre el uso de Frigilux App SGE.
+    </p>
+
+    <div class="space-y-4">
+      {faqs.map((faq) => (
+        <details class="group bg-card border border-separator rounded-2xl p-6 [&_summary::-webkit-details-marker]:hidden transition-all hover:shadow-md">
+          <summary class="flex items-center justify-between cursor-pointer">
+            <h3 class="text-base font-bold text-foreground pr-4">
+              {faq.question}
+            </h3>
+            <span class="text-primary transition-transform group-open:rotate-180">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </span>
+          </summary>
+          <p class="mt-4 text-sm text-muted-foreground leading-relaxed">
+            {faq.answer}
+          </p>
+        </details>
+      ))}
+    </div>
+
+    <div class="mt-16 p-8 bg-primary/5 rounded-3xl border border-primary/10 text-center">
+      <h3 class="text-lg font-bold text-foreground mb-2">¿Aún tienes dudas?</h3>
+      <p class="text-sm text-muted-foreground mb-6">
+        Nuestro equipo técnico está disponible para ayudarte con cualquier inconveniente.
+      </p>
+      <a
+        href={`mailto:${SITE_EMAILS.support}`}
+        class="inline-flex items-center justify-center bg-primary text-white text-sm font-bold py-3 px-8 rounded-xl hover:bg-primary-light transition-all"
+      >
+        Contactar a Soporte
+      </a>
+    </div>
+  </div>
+</MainLayout>

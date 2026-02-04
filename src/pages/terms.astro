@@ -1,0 +1,87 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import { SITE_EMAILS } from "../constants/constants";
+---
+
+<MainLayout title="Términos y Condiciones">
+  <div class="max-w-4xl mx-auto px-6 py-12">
+    <h2 class="text-4xl font-black mb-4 text-center text-foreground tracking-tight">
+      Términos y Condiciones de Uso
+    </h2>
+    <p class="text-sm text-center text-muted-foreground mb-8">
+      Última actualización: 04 de Febrero, 2026
+    </p>
+
+    <div class="prose prose-slate dark:prose-invert max-w-none text-justify">
+      <section class="space-y-8">
+
+        <div>
+          <h3 class="text-xl font-bold text-foreground mb-3">1. Naturaleza y Propiedad</h3>
+          <p>
+            La aplicación <strong>Frigilux App SGE</strong> es una herramienta tecnológica de uso interno, desarrollada y administrada por Frigilux. Su acceso está destinado exclusivamente a colaboradores debidamente autorizados para el cumplimiento de sus funciones laborales. Todos los derechos sobre el software, interfaces, bases de datos y logotipos son propiedad de la entidad patronal.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-foreground mb-3">2. Responsabilidad de la Cuenta</h3>
+          <p>
+            El acceso mediante credenciales corporativas, códigos de verificación (OTP) y autenticación biométrica es estrictamente personal e intransferible.
+          </p>
+          <ul class="list-disc ml-6 mt-2 space-y-2 text-sm">
+            <li>El colaborador es responsable del resguardo de su sesión activa y del uso correcto del dispositivo asignado.</li>
+            <li>Toda operación registrada bajo el identificador único del usuario será considerada como una gestión oficial realizada por el titular de la cuenta dentro de su jornada laboral.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-foreground mb-3">3. Uso de la Cámara y Evidencia Digital</h3>
+          <p>
+            Al utilizar los módulos de captura fotográfica para procesos de devolución o inventario, el colaborador garantiza que las imágenes enviadas son veraces y corresponden al estado real del producto. Estas fotografías se almacenan como respaldo técnico y administrativo de la gestión realizada, teniendo validez como soporte de auditoría interna.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-foreground mb-3">4. Confidencialidad y Restricciones</h3>
+          <p>
+            La Aplicación contiene información estratégica, incluyendo precios, niveles de inventario y datos de clientes. Queda estrictamente prohibido:
+          </p>
+          <ul class="list-none space-y-3 mt-4">
+            <li class="flex gap-2 italic text-sm">
+              <span class="text-primary font-bold">●</span>
+              <span>Extraer, divulgar o capturar datos para fines ajenos a los objetivos comerciales de la empresa.</span>
+            </li>
+            <li class="flex gap-2 italic text-sm">
+              <span class="text-primary font-bold">●</span>
+              <span>Realizar intentos de acceso no autorizado a los servidores de datos o servicios en la nube vinculados a la App.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-foreground mb-3">5. Gestión de Acceso</h3>
+          <p>
+            Frigilux se reserva el derecho de suspender, limitar o revocar el acceso a la Aplicación en cualquier momento, especialmente ante el cese de la relación laboral o la detección de irregularidades en el uso de la herramienta que comprometan la seguridad de la información corporativa.
+          </p>
+        </div>
+
+        <div class="bg-card border border-separator p-8 rounded-3xl mt-10 shadow-sm text-center">
+          <p class="text-sm font-bold text-foreground">
+            El uso de Frigilux App SGE constituye la aceptación de estos términos.
+          </p>
+          <div class="mt-4 flex flex-col items-center gap-2">
+             <p class="text-xs text-muted-foreground">
+              Para soporte técnico o aclaratorias, contacte al Departamento de IT:
+            </p>
+            <a
+              href={`mailto:${SITE_EMAILS.support}`}
+              class="text-primary font-bold hover:underline text-sm"
+            >
+              {SITE_EMAILS.support}
+            </a>
+          </div>
+        </div>
+
+      </section>
+    </div>
+  </div>
+</MainLayout>

@@ -1,0 +1,195 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import { SITE_EMAILS } from "../constants/constants";
+---
+
+<MainLayout title="Política de Privacidad">
+  <div class="max-w-4xl mx-auto px-6 py-12">
+    <h2
+      class="text-4xl font-black mb-4 text-center text-foreground tracking-tight"
+    >
+      Política de Privacidad
+    </h2>
+    <p class="text-sm text-center text-muted-foreground mb-8">
+      Última actualización: 04 de Febrero, 2026
+    </p>
+
+    <div class="prose prose-slate dark:prose-invert max-w-none text-justify">
+      <section class="space-y-8">
+        <div>
+          <h3 class="text-xl font-bold text-foreground mb-3">
+            1. Alcance y Consentimiento
+          </h3>
+          <p>
+            Esta política rige el tratamiento de datos de la aplicación <strong
+              >Frigilux App SGE</strong
+            >. Al utilizar esta herramienta, el colaborador acepta el
+            tratamiento de su información bajo los términos aquí expuestos,
+            exclusivamente para fines laborales dentro del marco de la relación
+            con Frigilux. La aplicación está diseñada para operar en
+            dispositivos Android y iOS, integrando servicios de nube para la
+            sincronización en tiempo real.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-foreground mb-3">
+            2. Información Recopilada y Permisos del Dispositivo
+          </h3>
+          <p class="mb-4">
+            Para garantizar la operatividad de los módulos de venta y postventa,
+            la aplicación solicita y gestiona los siguientes datos y permisos:
+          </p>
+          <ul class="list-disc ml-6 space-y-4">
+            <li>
+              <strong>Datos de Autenticación y Verificación (OTP):</strong> Se recopila
+              el correo electrónico corporativo para el envío de códigos <strong
+                >OTP (One-Time Password)</strong
+              >. Este método de autenticación multifactor asegura que solo el
+              titular de la cuenta pueda acceder a la plataforma, protegiendo la
+              integridad de la sesión.
+            </li>
+            <li>
+              <strong>Uso de la Cámara y Galería:</strong> La aplicación solicita
+              permiso para acceder a la cámara del dispositivo. Este uso es exclusivo
+              para la <strong
+                >captura de fotografías de productos en proceso de devolución</strong
+              >. Estas imágenes sirven como evidencia técnica del estado físico
+              de la mercancía y son vinculadas al registro de la operación para
+              su auditoría por el departamento correspondiente.
+            </li>
+            <li>
+              <strong>Autenticación Biométrica (Face ID / Touch ID):</strong>
+              Conforme a las configuraciones de seguridad, la app utiliza los sensores
+              biométricos para restaurar sesiones.
+              <strong>Aclaración técnica:</strong> La aplicación NO almacena ni tiene
+              acceso a sus rasgos físicos. El proceso es gestionado por el sistema
+              operativo, y la app solo recibe una confirmación cifrada.
+            </li>
+            <li>
+              <strong>Datos de Operación:</strong> Registros detallados de ventas,
+              pedidos, inventarios consultados y gestión de devoluciones vinculados
+              al ID único de usuario (UUID).
+            </li>
+            <li>
+              <strong>Datos de Diagnóstico:</strong> Información técnica sobre el
+              dispositivo (modelo, versión de SO) para asegurar la estabilidad de
+              la aplicación y la seguridad de las conexiones.
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-foreground mb-3">
+            3. Finalidad del Tratamiento
+          </h3>
+          <p>
+            La información y los permisos solicitados tienen como único
+            propósito optimizar la gestión comercial de la marca en el
+            territorio venezolano. Específicamente, esto permite:
+          </p>
+          <ul class="list-disc ml-6 mt-2 space-y-2 text-foreground">
+            <li>
+              Validar la identidad del usuario mediante sistemas de doble factor
+              (OTP).
+            </li>
+            <li>
+              Documentar visualmente los procesos de logística inversa y
+              devoluciones de mercancía.
+            </li>
+            <li>
+              Asegurar la trazabilidad total de las operaciones comerciales de
+              cada colaborador.
+            </li>
+            <li>
+              Mantener la persistencia segura de la sesión mediante
+              almacenamiento cifrado local.
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-foreground mb-3">
+            4. Confidencialidad y Terceros
+          </h3>
+          <p>
+            Frigilux garantiza que los datos, incluyendo las fotografías
+            capturadas para devoluciones, no serán cedidos, vendidos ni
+            compartidos con terceros con fines comerciales o publicitarios. El
+            acceso a esta información está restringido estrictamente al personal
+            administrativo, logístico y de soporte técnico autorizado de
+            Frigilux.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-foreground mb-3">
+            5. Eliminación de Datos y Retención Legal
+          </h3>
+          <p class="mb-4">
+            Los usuarios pueden solicitar la desactivación de su acceso mediante
+            el correo <strong>it@frigilux.com</strong>. No obstante, el usuario
+            reconoce que la eliminación de su cuenta personal no conlleva la
+            supresión de los registros operativos, amparado en las siguientes
+            bases legales vigentes:
+          </p>
+
+          <ul
+            class="list-none space-y-4 border-l-2 border-primary/30 pl-4 mb-6"
+          >
+            <li class="text-sm text-muted-foreground">
+              <span class="font-bold text-foreground"
+                >Código Orgánico Tributario,</span
+              >
+              publicado en la Gaceta Oficial de la República Bolivariana de Venezuela
+              Nro. 6.507 Extraordinario de fecha 29 de Enero del 2020. 
+            </li>
+            <li class="text-sm text-muted-foreground">
+              <span class="font-bold text-foreground"
+                >Ley Orgánica del Trabajo, los Trabajadores y las Trabajadoras
+                (LOTTT),</span
+              >
+              publicada en la Gaceta Oficial de la República Bolivariana de Venezuela
+              Nro. 6.076 Extraordinario de fecha 07 de Mayo del 2012.
+            </li>
+            <li class="text-sm text-muted-foreground">
+              <span class="font-bold text-foreground"
+                >Ley de Mensajes de Datos y Firmas Electrónicas,</span
+              >
+              publicada en la Gaceta Oficial de la República Bolivariana de Venezuela
+              Nro. 37.135 de fecha 10 de Febrero del 2001.
+            </li>
+          </ul>
+          <p class="mt-2 italic text-sm text-muted-foreground">
+            Nota: Al procesar su solicitud, se anonimizarán sus datos de acceso,
+            pero los históricos de transacciones y evidencias fotográficas
+            permanecerán bajo resguardo por los lapsos legales obligatorios.
+          </p>
+        </div>
+        <div
+          class="bg-card border border-separator p-8 rounded-3xl mt-10 shadow-sm"
+        >
+          <h3 class="text-lg font-bold mb-3 text-foreground">
+            Contacto de Soporte
+          </h3>
+          <p class="text-sm text-muted-foreground mb-4">
+            Para consultas sobre el uso de la cámara, procesos de verificación
+            OTP o temas legales, contacte a:
+          </p>
+          <div class="space-y-1">
+            <p class="text-sm font-black">
+              Departamento de IT - Frigilux Venezuela
+            </p>
+            <p class="text-sm">
+              Email: <a
+                href={`mailto:${SITE_EMAILS.support}`}
+                class="text-primary font-bold hover:underline"
+                >{SITE_EMAILS.support}</a
+              >
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</MainLayout>

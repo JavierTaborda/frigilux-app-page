@@ -1,0 +1,60 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import MockupApp from "../components/MockupApp.astro";
+import { SITE_EMAILS } from "../constants/constants";
+---
+
+<MainLayout title="Gestión Comercial">
+  <section class="px-24">
+    <div class="max-w-3xl">
+      <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
+        Frgilux App SGE
+      </h2>
+      <p class="text-xl text-muted-foreground mb-12">
+        SGE es la herramienta oficial diseñada para centralizar y potenciar la operación comercial en Venezuela de la marca Frigilux.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-4 mb-20 px-6">
+      {[
+        { emoji: "📊", title: "Inteligencia de Negocios", desc: "Monitoreo de indicadores clave en tiempo real." },
+        { emoji: "📦", title: "Control de Pedidos", desc: "Gestión ágil del ciclo de venta y despachos." },
+        { emoji: "🔒", title: "Acceso Blindado", desc: "Seguridad de grado empresarial para datos sensibles." },
+        { emoji: "⚡", title: "Eficiencia Operativa", desc: "Reducción de tiempos de respuesta en el mercado." }
+      ].map(item => (
+        <div class="bg-componentbg p-6 rounded-2xl border border-separator shadow-sm hover:border-primary/50 transition-colors">
+          <span class="text-3xl mb-3 block">{item.emoji}</span>
+          <h3 class="font-bold text-lg mb-1">{item.title}</h3>
+          <p class="text-sm text-muted-foreground">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+
+    <MockupApp />
+
+    <div class="mt-20 mx-auto  bg-card border border-separator rounded-3xl p-8 md:p-12 relative overflow-hidden">
+      <div class="relative z-10">
+        <h3 class="text-2xl font-bold mb-4">Soporte y Asistencia Técnica</h3>
+        <p class="text-muted-foreground mb-8 max-w-2xl text-sm leading-relaxed">
+          Si eres colaborador de Frigilux y presentas inconvenientes con tu acceso, utiliza los canales oficiales de IT.
+        </p>
+        <div class="flex flex-col sm:row gap-4">
+          <div class="bg-background/50 backdrop-blur-sm p-4 rounded-xl border border-separator">
+            <p class="text-[10px] uppercase font-black opacity-40 mb-1">Email</p>
+            <p class="text-primary font-bold">{SITE_EMAILS.support}</p>
+          </div>
+          <div class="bg-background/50 backdrop-blur-sm p-4 rounded-xl border border-separator">
+            <p class="text-[10px] uppercase font-black opacity-40 mb-1">Sede</p>
+            <p class="font-bold">Valencia, Venezuela</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-12 p-5 bg-primary/5 border-l-4 border-primary rounded-r-xl text-sm italic">
+       <strong>Aviso de Acceso:</strong> Esta aplicación requiere credenciales corporativas
+      previamente autorizadas por el departamento de IT de Frigilux. No disponible
+      para el público general.
+    </div>
+  </section>
+</MainLayout>
