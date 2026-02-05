@@ -1,48 +1,48 @@
 ---
+// Mantienes tus datos de screenshots igual
 const screenshots = [
   { id: 1, title: "Dashboard Principal", desc: "Visualiza tus métricas clave de un vistazo.", color: "bg-primary" },
   { id: 2, title: "Metas de Ventas", desc: "Sincronización total con tus metas de ventas asignadas.", color: "bg-secondary" },
   { id: 3, title: "Devoluciones de Clientes", desc: "Procesa devoluciones por garantía.", color: "bg-tertiary" },
-  { id: 4, title: "Inventario de Artículos", desc: "Consulta en tiempo real  el inventario.", color: "bg-orange-500" },
+  { id: 4, title: "Inventario de Artículos", desc: "Consulta en tiempo real el inventario.", color: "bg-orange-500" },
   { id: 5, title: "Reportes", desc: "Consulta pedidos en todo momento.", color: "bg-red-500" },
 ].map(item => ({
   ...item,
   url: `/screenshot${item.id}.jpg`
 }));
-
 ---
 
-<div class="bg-transparent dark:bg-componentbg py-20 px-6 rounded-3xl overflow-hidden">
-  <div class="max-w-6xl mx-auto px-6">
+<div class="bg-transparent dark:bg-componentbg py-10 md:py-20 rounded-3xl overflow-hidden">
+  <div class="max-w-6xl mx-auto px-4 md:px-6">
     {screenshots.map((img, index) => (
-      <div class={`flex flex-col md:flex-row items-center gap-12 mb-32 ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
+      <div class={`flex flex-col md:flex-row items-center gap-8 md:gap-12 mb-20 md:mb-32 ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
         
-        {/* Lado del Texto */}
-        <div class="w-full md:w-1/2 space-y-4 reveal-text">
-          <div class={`w-12 h-12 ${img.color} rounded-2xl flex items-center justify-center text-white text-xl font-bold shadow-lg`}>
+
+        <div class="w-full md:w-1/2 space-y-4 reveal-text text-center md:text-left">
+          <div class={`w-12 h-12 ${img.color} rounded-2xl flex items-center justify-center text-white text-xl font-bold shadow-lg mx-auto md:mx-0`}>
             {img.id}
           </div>
-          <h3 class="text-3xl font-black text-foreground tracking-tight">
+          <h3 class="text-2xl md:text-3xl font-black text-foreground tracking-tight">
             {img.title}
           </h3>
-          <p class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+          <p class="text-base md:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
             {img.desc}
           </p>
         </div>
 
-       
-        <div class="w-full md:w-1/2 reveal-image">
-          <div class="relative group">
-          
-            <div class={`absolute -inset-4 ${img.color} opacity-10 dark:opacity-90 rounded-[2.5rem] rotate-3 group-hover:rotate-0 transition-transform duration-500`}></div>
+        <div class="w-full md:w-1/2 reveal-image flex justify-center">
+          <div class="relative group w-[85%] md:w-full max-w-[320px] md:max-w-none">
             
-            <div class="relative bg-componentbg p-4 rounded-4xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border-2 border-slate-100 dark:border-slate-500 overflow-hidden">
+
+            <div class={`absolute -inset-2 md:-inset-4 ${img.color} opacity-20 dark:opacity-40 rounded-4xl md:rounded-[2.5rem] rotate-2 md:rotate-3 group-hover:rotate-0 transition-transform duration-500`}></div>
+            
+            <div class="relative bg-componentbg p-2 md:p-4 rounded-4xl md:rounded-4xl shadow-2xl border border-slate-100 dark:border-slate-800 overflow-hidden">
               <img 
                 src={img.url} 
                 alt={img.title} 
-                class="w-full h-auto rounded-xl object-cover aspect-630/1368"
+                class="w-full h-auto rounded-3xl md:rounded-xl shadow-inner"
                 loading="lazy"
-                onerror="this.src='https://placehold.co/1260x2736/eee/999?text=Cargando+Imagen...'"
+                onerror="this.src='https://placehold.co/630x1368/eee/999?text=Cargando+Imagen...'"
               />
             </div>
           </div>
@@ -51,29 +51,3 @@ const screenshots = [
     ))}
   </div>
 </div>
-
-<style>
-  /* in animations*/
-  .reveal-text, .reveal-image {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-
-  .is-visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-</style>
-
-<script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-      }
-    });
-  }, { threshold: 0.2 });
-
-  document.querySelectorAll('.reveal-text, .reveal-image').forEach(el => observer.observe(el));
-</script>
